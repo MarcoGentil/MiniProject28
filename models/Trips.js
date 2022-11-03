@@ -1,5 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 class Trips extends Model {
@@ -30,7 +29,7 @@ Trips.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Traveller',
+        model: 'traveller',
         key: 'id',
       },
     },
@@ -38,7 +37,7 @@ Trips.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'Location',
+        model: 'location',
         key: 'id',
       },
     },
@@ -48,7 +47,7 @@ Trips.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'trips',
   }
 );
 
